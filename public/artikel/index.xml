@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Artikels on ElwinMusadi</title>
+    <link>https://elwinmusadi.github.io/artikel/</link>
+    <description>Recent content in Artikels on ElwinMusadi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 23 Nov 2018 04:17:24 +0800</lastBuildDate>
+    
+	<atom:link href="https://elwinmusadi.github.io/artikel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Menggambar Emoticon Smile Dengan Java</title>
+      <link>https://elwinmusadi.github.io/artikel/membuat-emot-smile-dengan-java/</link>
+      <pubDate>Fri, 23 Nov 2018 04:17:24 +0800</pubDate>
+      
+      <guid>https://elwinmusadi.github.io/artikel/membuat-emot-smile-dengan-java/</guid>
+      <description>Sebelumnya kita telah belajar membuat beberapa garis yang membentuk rumah dengan Java, anda bisa melihatnya disini. Kali ini kita akan membuat sebuah emoticon smile.
+Langsung saja,
+Masukan fungsi import yang diperlukan,
+import java.awt.*;  Buat class dengan nama smileJava, lalu isi kode berikut:
+smileJava(){ setBackground(new Color(227, 227, 227));// warna background } public void paint(Graphics A){ A.setColor(Color.white); // untuk warna A.drawArc(229,29, 152, 151, 0, 360);//draw lingkaran kepala A.setColor(new Color(237, 202, 39)); A.</description>
+    </item>
+    
+    <item>
+      <title>Menggambar Rumah dengan Java</title>
+      <link>https://elwinmusadi.github.io/artikel/menggambar-rumah-netbeans/</link>
+      <pubDate>Thu, 22 Nov 2018 09:52:16 +0800</pubDate>
+      
+      <guid>https://elwinmusadi.github.io/artikel/menggambar-rumah-netbeans/</guid>
+      <description>Selamat datang di blog saya, kali ini kita akan belajar menggunakan JFrame dan Graphics pada Java untuk menggambar garis sederhana. Garis-garis ini akan kita hubungkan menjadi sebuah gambar rumah :D.
+Editor dan Compiler yang saya gunakan disini adalah Netbeans IDE versi 8.2
+Jika belum punya silahkan download dan instal melalui situs resminya https://netbeans.org/
+Baik kita mulai,
+Pertama-tama, masukan beberapa fungsi import pada Java dibawah nama package.
+import java.awt.Color; import java.awt.Graphics; import javax.</description>
+    </item>
+    
+    <item>
+      <title>Teknik Kompilasi - Metode Parsing</title>
+      <link>https://elwinmusadi.github.io/artikel/metode-parsing/</link>
+      <pubDate>Mon, 19 Nov 2018 09:46:46 +0800</pubDate>
+      
+      <guid>https://elwinmusadi.github.io/artikel/metode-parsing/</guid>
+      <description>Metode parsing Parsing atau proses penurunan yang biasa disebut Analisis parsing atau sintaksis adalah proses menganalisis serangkaian simbol, baik dalam bahasa alami atau dalam bahasa komputer, sesuai dengan aturan tata bahasa formal.
+Parsing dapat dilakukan dengan 2 cara:
+ Penurunan terkiri (leftmost derivation) : simbol variable yang paling kiri diturukan (tuntas) dahulu. Penurunan terkanan (rightmost derivation) : simbol variable yang paling kiri diturukan (tuntas) dahulu.  Misalkan kita inginkan hasil string aabbaa dari CFL ( Context Free Language )</description>
+    </item>
+    
+    <item>
+      <title>Sejarah Perkembangan Jaringan Komputer</title>
+      <link>https://elwinmusadi.github.io/artikel/sejarah-perkembangan-jaringan/</link>
+      <pubDate>Sun, 18 Nov 2018 16:30:35 +0800</pubDate>
+      
+      <guid>https://elwinmusadi.github.io/artikel/sejarah-perkembangan-jaringan/</guid>
+      <description>Selamat datang di blog elwinmusadi, Kali ini kita akan membahas seputar dunia IT tentang sejarah perkembangan jaringan komputer dari awal pertama diciptakan hingga sekarang.
+Tahun 1940-an
+Konsep jaringan komputer pertama kali mulai dicetuskan pada era tahun 1940-an. Pada era ini, konsep jaringan komputer dibuat di Amerika, di dalam sebuah laboratorium yang sedang mengembangkan komputer MODEL I. Pengembangan ini dicetuskan oleh grup riset yang berasal dari Harvard University yang dipimpin oleh Prof.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://elwinmusadi.github.io/artikel/membuat-emot-smile-dengan-java/</loc>
+    <lastmod>2018-11-23T04:17:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://elwinmusadi.github.io/artikel/menggambar-rumah-netbeans/</loc>
+    <lastmod>2018-11-22T09:52:16+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://elwinmusadi.github.io/artikel/metode-parsing/</loc>
+    <lastmod>2018-11-19T09:46:46+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://elwinmusadi.github.io/artikel/sejarah-perkembangan-jaringan/</loc>
+    <lastmod>2018-11-18T16:30:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://elwinmusadi.github.io/post/artikel-baruku/</loc>
+    <lastmod>2018-11-15T17:28:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://elwinmusadi.github.io/artikel/</loc>
+    <lastmod>2018-11-23T04:17:24+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://elwinmusadi.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://elwinmusadi.github.io/</loc>
+    <lastmod>2018-11-23T04:17:24+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://elwinmusadi.github.io/post/</loc>
+    <lastmod>2018-11-15T17:28:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://elwinmusadi.github.io/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

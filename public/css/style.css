@@ -1,0 +1,29 @@
+.bg-elwinmusadi {
+    background: #008080;
+}
+
+
+.post-content  {
+    /*font-family: Merriweather, Georgia, Sans-serif;*/
+    font-family: "PT Sans", Roboto, sans-serif;
+}
+
+.post-content h2, 
+.post-content h3, 
+.post-content h4, 
+.post-content h5,
+.post-content h6 {
+    font-family: "PT Sans", Roboto, sans-serif;
+    margin: 1em 0;
+}  
+
+.post-content img {
+    max-width: 100%;
+}
+
+.navbar-font {
+    font-family: 'Allerta Stencil', sans-serif;
+    src: url('/themes/Lumos/static/fonts/AllertaStencil-Regular.ttf');
+    src: url('/themes/Lumos/static/fonts/AllertaStencil-Regular.ttf') format('ttf'),
+         url('/themes/Lumos/static/fonts/AllertaStencil-Regular.ttf') format('truetype'); 
+}

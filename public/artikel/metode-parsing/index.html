@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Teknik Kompilasi - Metode Parsing</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+<meta itemprop="name" content="Teknik Kompilasi - Metode Parsing">
+<meta itemprop="description" content="Metode parsing Parsing atau proses penurunan yang biasa disebut Analisis parsing atau sintaksis adalah proses menganalisis serangkaian simbol, baik dalam bahasa alami atau dalam bahasa komputer, sesuai dengan aturan tata bahasa formal.
+Parsing dapat dilakukan dengan 2 cara:
+ Penurunan terkiri (leftmost derivation) : simbol variable yang paling kiri diturukan (tuntas) dahulu. Penurunan terkanan (rightmost derivation) : simbol variable yang paling kiri diturukan (tuntas) dahulu.  Misalkan kita inginkan hasil string aabbaa dari CFL ( Context Free Language )">
+
+
+<meta itemprop="datePublished" content="2018-11-19T09:46:46&#43;08:00" />
+<meta itemprop="dateModified" content="2018-11-19T09:46:46&#43;08:00" />
+<meta itemprop="wordCount" content="456">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<meta property="og:title" content="Teknik Kompilasi - Metode Parsing" />
+<meta property="og:description" content="Metode parsing Parsing atau proses penurunan yang biasa disebut Analisis parsing atau sintaksis adalah proses menganalisis serangkaian simbol, baik dalam bahasa alami atau dalam bahasa komputer, sesuai dengan aturan tata bahasa formal.
+Parsing dapat dilakukan dengan 2 cara:
+ Penurunan terkiri (leftmost derivation) : simbol variable yang paling kiri diturukan (tuntas) dahulu. Penurunan terkanan (rightmost derivation) : simbol variable yang paling kiri diturukan (tuntas) dahulu.  Misalkan kita inginkan hasil string aabbaa dari CFL ( Context Free Language )" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://elwinmusadi.github.io/artikel/metode-parsing/" /><meta property="article:published_time" content="2018-11-19T09:46:46&#43;08:00"/>
+<meta property="article:modified_time" content="2018-11-19T09:46:46&#43;08:00"/>
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Teknik Kompilasi - Metode Parsing"/>
+<meta name="twitter:description" content="Metode parsing Parsing atau proses penurunan yang biasa disebut Analisis parsing atau sintaksis adalah proses menganalisis serangkaian simbol, baik dalam bahasa alami atau dalam bahasa komputer, sesuai dengan aturan tata bahasa formal.
+Parsing dapat dilakukan dengan 2 cara:
+ Penurunan terkiri (leftmost derivation) : simbol variable yang paling kiri diturukan (tuntas) dahulu. Penurunan terkanan (rightmost derivation) : simbol variable yang paling kiri diturukan (tuntas) dahulu.  Misalkan kita inginkan hasil string aabbaa dari CFL ( Context Free Language )"/>
+
+
+
+
+<link rel="icon" href="/img/Logo-KodingLabs.png" class="d-inline-block align-top rounded-circle" />
+
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/prism.css" />
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-80517197-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-info sticky-top" style="z-index:1025">
+        <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet">
+        
+    <div class="container">    
+            
+        <a style="font-family: 'Allerta Stencil', sans-serif"; class="navbar-brand" href="https://elwinmusadi.github.io"><img src="/img/Logo-KodingLabs.png" width="30" height="30" class="d-inline-block align-top"
+            alt=""> ElwinMusadi</a>
+           
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="https://elwinmusadi.github.io">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                </ul>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" action="https://www.google.co.id" id="cse-search-box">
+                <input type="hidden" name="cx" value="partner-pub-6279325630224392:9670052267" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="hidden" name="sa" value="search" />
+                <input class="form-control mr-sm-2" type="text" name="q" placeholder="Kata Kunci" aria-label="Search">
+                <button class="btn btn-warning my-2 my-sm-0" type="submit">Cari</button>
+            </form>
+        </div>
+    </div>
+</nav>
+        <div class="container mb-5">
+
+        </div>
+        
+
+        <div class="container mb-5">
+            <div class="row">
+
+                <div class="col-sm-12 col-lg-8 mb-5 card">
+                    <article>
+                        <div class="">
+                           <div class="card-body p-md-5">
+                                
+                               <div class="post-header">
+                                    
+                                    <div class="mb-3">
+                                        <img src="/img/author.jpg" class="rounded-circle mr-1" width="32" height="32" />
+                                        <a class="align-middle text-info" href="https://twitter.com/elwinmusadi16">Elwin Musadi</a> 
+                                        <small class="align-middle text-muted">
+                                                | update terakhir <time>19-11-2018</time>
+                                        </small>
+                                    </div>
+
+                                    <h2 class="card-title mb-3">Teknik Kompilasi - Metode Parsing</h2>
+                                    <hr>
+                                    
+                                    <div>
+                                        
+                                    </div>
+
+                                </div>
+                                <div class="post-content my-5">
+                                    <p>
+                                    <img class='card-img-top' 
+                                        src='/img/metode-parsing.png'
+                                        alt='Teknik Kompilasi - Metode Parsing'>
+                                    </p>
+                                    <br/>
+                                    <p>Metode parsing Parsing atau proses penurunan yang biasa disebut Analisis parsing atau sintaksis adalah proses menganalisis serangkaian simbol, baik dalam bahasa alami atau dalam bahasa komputer, sesuai dengan aturan tata bahasa formal.</p>
+
+<p>Parsing dapat dilakukan dengan 2 cara:</p>
+
+<ol>
+<li>Penurunan terkiri (<em>leftmost derivation</em>) : simbol variable yang paling kiri diturukan (tuntas) dahulu.</li>
+<li>Penurunan terkanan (<em>rightmost derivation</em>) : simbol variable yang paling kiri diturukan (tuntas) dahulu.</li>
+</ol>
+
+<p>Misalkan kita inginkan hasil string aabbaa dari CFL ( <em>Context Free Language</em> )</p>
+
+<pre><code>CFL    | S a AS | a, |    
+       | A SbA  | ba |
+</code></pre>
+
+<p><img src="/themes/Lumos/static/img/metode-parsing/parsing-1.png" alt="parsing-1" /></p>
+
+<p>Contoh soal:</p>
+
+<p><img src="/themes/Lumos/static/img/metode-parsing/contoh-soal-1.png" alt="contoh-soal-1" title="Contoh Soal 1" /></p>
+
+<p><img src="/themes/Lumos/static/img/metode-parsing/contoh-soal-2.png" alt="contoh-soal-2" title="Contoh Soal 2" /></p>
+
+<p>Parsing digolongkan menjadi:</p>
+
+<ul>
+<li>Top-Down top down parsing adalah langkah dalam membentuk/membangun sebuah parse tree berdasarkan input dimulai dari root dan membuat nodes untuk parse tree secara preorder(depth first). Penelusuran dari root ke leaf atau dari simbol awal ke simbol terminal.
+metode ini meliputi:
+
+<ul>
+<li>Backtrack/backup : Metode Brute-Force tidak dapat menggunakan grammar rekursi kiri, yaitu grammar yang mengandung produksi rekursi kiri (left recursion) :</li>
+<li>Problems: Left Recursion Left factoring Sebuah grammar dikatakan bersifat left recursion apabila grammar tersebut mengandung suatu nonterminal dan derivasinya.</li>
+</ul></li>
+</ul>
+
+<p><img src="/themes/Lumos/static/img/metode-parsing/contoh-3.png" alt="contoh-3" /></p>
+
+<p>Metode Top-Down Parsing tidak bisa menangani grammar yang mengandung left recursive, sehingga left recursive perlu dihilangkan.</p>
+
+<p>Produksi rekursi kiri akan menyebabkan parsing mengalami looping tak hingga.</p>
+
+<p>Grammar dapat dikatakan left factoring apabila terdapat produksi yang berbentuk seperti di bawah ini :</p>
+
+<p>Contoh :</p>
+
+<pre><code>A   → αβ1 | αβ2
+</code></pre>
+
+<p>Grammar tersebut diubah menjadi :</p>
+
+<pre><code>A    → αA’ | A’
+
+     → β1 | β2
+</code></pre>
+
+<p>Adanya left factoring ini menyebabkan grammar menjadi ambigu karena tidak jelas yang mana dari dua produksi alternatif yang bisa digunakan untuk memperluas nonterminal A. Dari contoh soal di atas, kita tidak tahu mau menelusuri A ke <code>αβ1</code> atau ke <code>αβ2</code>.</p>
+
+<ul>
+<li><p>No backtrack : Recursive Descent Parser</p></li>
+
+<li><p>Bottom-Up</p>
+
+<p>Bottom-Upp parsing adalah sebuah langkah parsing menggunakan langkah shift-reduce parsingShift reduce parsing bekerja berdasarkan namanya, “Shift” dan “Reduce” sehingga setiap kali stack memegang simbol-simbol yang tidak dapat dikurangi lagi, kita menggeser masukan lain, dan ketika itu cocok, kita mengurangi. Metode ini melakukan penelusuran dari leaf ke root.</p></li>
+
+<li><p>LR(k)</p></li>
+
+<li><p>Presedence Parser</p></li>
+</ul>
+
+<p>Masing-masing metode parsing memiliki kelemahan dan kelebihannya masing-masing. Jadi ketika kita sedang menangani persoalan dengan mengandung empty production, lebih baik menggunakan Top-down parsing, sebaliknya,kita lebih baik menggunakan Bottom-up parsing untuk menangani persoalan yang mengandung left recursion. Karena itu metode parsing yang terbaik ialah yang dapat menggabungkan kedua cara ini.</p>
+
+<p>Metode parsing yang terbaik ialah metode yang dapat menggabungkan top-down dan bottom-up parsing yang disebut Left-corner.</p>
+
+<p>Cara kerja Left-corner parsing ialah dengan mula-mula menerima sebuah kata, menentukan jenis constituent.</p>
+
+<p>Info tambahan : Terdapat metode parsing yang terbaik, yaitu metode yang menggabungkan top-down dan bottom-up parsing yang disebut Left-corner.</p>
+
+<p>Cara kerja Left-corner parsing ialah dengan mula-mula menerima sebuah kata, menentukan jenis constituent.</p>
+
+<p>Buktinya : Dengan proses parsing dimulai secara bottom-up dan diakhiri secara top-down.</p>
+
+                                </div>
+                                <div class="post-footer">
+                                    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    (function () {
+        
+        
+        if (window.location.hostname == "localhost")
+            return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'elwinmusadi';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    </div>
+
+                    <div class="col-sm-12 col-lg-4">
+                       <aside>
+
+    <div class="widget">
+        <a href="http://projects.id/petani_kode" target="_blank">
+        <img src="http://lorempixel.com/360/250" alt="Proyek Petani Kode"/>
+        </a>
+    </div>
+    
+    </aside>
+                    </div>
+            </div>
+        </div>
+
+        <footer class="border border-bottom-0 border-left-0 border-right-0">
+    <div class="container pt-3 pb-3 pt-md-5 pb-md-5">
+        <div class="row">
+            <div class="col">
+
+                &copy; 2018 <a href="https://elwinmusadi.github.io">ElwinMusadi</a> | Template by <a href="https://www.petanikode.com" target="blank">Petani Kode</a>
+
+            </div>
+        </div>
+    </div>
+</footer>
+        <script type="text/javascript" src="/js/jquery-3.2.1.slim.min.js"></script>
+<script type="text/javascript" src="/js/popper.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/prism.js"></script>
+    </body>
+</html>

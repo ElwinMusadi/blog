@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-info sticky-top" style="z-index:1025">
+        <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet">
+        
+    <div class="container">    
+            
+        <a style="font-family: 'Allerta Stencil', sans-serif"; class="navbar-brand" href="{{.Site.BaseURL}}"><img src="/img/Logo-KodingLabs.png" width="30" height="30" class="d-inline-block align-top"
+            alt=""> {{ .Site.Title }}</a>
+           
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{.Site.BaseURL}}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                </ul>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" action="https://www.google.co.id" id="cse-search-box">
+                <input type="hidden" name="cx" value="partner-pub-6279325630224392:9670052267" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="hidden" name="sa" value="search" />
+                <input class="form-control mr-sm-2" type="text" name="q" placeholder="Kata Kunci" aria-label="Search">
+                <button class="btn btn-warning my-2 my-sm-0" type="submit">Cari</button>
+            </form>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,26 @@
+title = "ElwinMusadi"
+baseurl = "https://elwinmusadi.github.io"
+
+# Agar front-matter pakai format YAML
+MetaDataFormat = "yaml"
+
+# untuk apply temanya
+themesDir = "themes"
+theme = "Lumos"
+
+# Shortname disqus, silahkan sesuaikan
+DisqusShortname = "elwinmusadi"
+
+# Untuk Google Analytic, silahkan sesuikan
+googleAnalytics = "UA-80517197-1" 
+
+# Untuk deskripsi tag meta di homepage
+description = "Blog Programmer Pemula"
+
+# Biodata Author
+[author]
+    name = "Elwin Musadi"
+    homepage = "https://twitter.com/elwinmusadi16"
+    bio = "Introvert"
+    image = "/img/author.jpg"
+    #image = "https://lh5.googleusercontent.com/-h2tLsyijw8Q/AAAAAAAAAAI/AAAAAAAACys/WBpjN_34z3o/s32-c/photo.jpg"
